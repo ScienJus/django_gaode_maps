@@ -41,3 +41,9 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+.idea/
+my_django_tools
+templates
+
+*.sqlite3
