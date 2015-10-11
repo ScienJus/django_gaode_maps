@@ -21,6 +21,10 @@ $(document).ready(function() {
     //注册地图的click事件
     var clickEventListener = map.on( 'click', function(e) {
         var location = [e.lnglat.getLng(), e.lnglat.getLat()];
+        //更新中心点
+        map.setCenter(location);
+        //更新标记
+        marker.setPosition(location);
         //设置坐标
         $("#id_location").val(location.join(","));
         //得到城市
@@ -36,9 +40,5 @@ $(document).ready(function() {
                $("#id_postal_code").val( result.regeocode.addressComponent.adcode);
             }
         });
-        //更新中心点
-        map.setCenter(location);
-        //更新标记
-        marker.setPosition(location);
     });
 });
